@@ -1,0 +1,7 @@
+*~
+*.o
+*.gen
+*.swp
+bin/
+lib/
+tags
