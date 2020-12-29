@@ -1,0 +1,7 @@
+*~
+*swp
+*/bin
+*.obj
+*.blob
+packer
+parkd*
