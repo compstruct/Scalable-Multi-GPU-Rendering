@@ -10,14 +10,14 @@ CHOPIN: Scalable Graphics Rendering in Multi-GPU Systems via Parallel Image Comp
 
 # Multi-GPU-ATTILA
 
-This work was implemented upon [ATTILA](http://attila.ac.upc.edu/wiki/index.php/Attila_Project). The original README of the ATTILA that we used can be found at [here](./multigpu_graphics_attila/README).
+This work was implemented upon [ATTILA](http://attila.ac.upc.edu/wiki/index.php/Attila_Project). The original README of the ATTILA that we used can be found at [here](./multigpu_graphics_attila/README.md).
 
-For multi-GPU graphics rendering, our baseline implementation is to duplicate all primitives in every GPU. We also implemented both [GPUpd](https://dl.acm.org/doi/abs/10.1145/3123939.3123968?casa_token=rB2k2gbD9_QAAAAA:ejh8sFOZK2KGL5hwQzCzfyS4025Z1nT2C4wZ0qNUhAvVYtiHSGjwvfRN_4fqOEJYFhY1ppxXiyezYw) and CHOPIN.
+For multi-GPU graphics rendering, our baseline implementation is to duplicate all primitives in every GPU (i.e., similar to NVIDIA's NVLink and AMD's CrossFire). We also implemented both [GPUpd](https://dl.acm.org/doi/abs/10.1145/3123939.3123968?casa_token=rB2k2gbD9_QAAAAA:ejh8sFOZK2KGL5hwQzCzfyS4025Z1nT2C4wZ0qNUhAvVYtiHSGjwvfRN_4fqOEJYFhY1ppxXiyezYw) and CHOPIN.
 
 A template config for multi-GPU simulation can be found at [here](./multigpu_graphics_attila/test/config/bGPU_MultiGPUs.ini). All benchmarks that we used can be downloaded from [here](http://attila.ac.upc.edu/traceList/).
 
 # ParKD
 
-In CHOPIN, we use [ParKD](https://github.com/bchoi/ParKD) to divide draw calls into multiple groups, and partition transparent draw calls among GPUs. The original README of the ParKD that we used can be found at [here](./ParKD/README).
+In CHOPIN, we use [ParKD](https://github.com/bchoi/ParKD) to divide draw calls into multiple groups, and partition transparent draw calls among GPUs. The original README of the ParKD that we used can be found at [here](./parkd/README).
 
-Before running ParKD, you should run ATTILA first with single-GPU configuration and profileForSortLast being enabled. The generated profiling results (inputVertexes.obj, blendInfo.obj, zTestInfo.obj, and zFightingInfo.obj) are inputs of ParKD. The binary output file of ParKD will then be used as an input of CHOPIN simulation in ATTILA.
+Before running ParKD, you should run ATTILA first with single-GPU configuration and _profileForSortLast_ being enabled. The generated profiling results (_inputVertexes.obj_, _blendInfo.obj_, _zTestInfo.obj_, and _zFightingInfo.obj_) are inputs of ParKD. The binary output file of ParKD will then be used as an input of CHOPIN simulation in ATTILA.
